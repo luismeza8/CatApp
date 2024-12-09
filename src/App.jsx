@@ -4,7 +4,6 @@ function App() {
 
   return (
     <div className='h-full'>
-      <Navbar />
     </div>
   )
 }
