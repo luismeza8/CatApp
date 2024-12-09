@@ -2,7 +2,7 @@
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}", // Ajusta las rutas según tu proyecto
-    "./public/index.html", // Asegúrate de incluir todas las rutas necesarias
+    "./index.html", // Asegúrate de incluir todas las rutas necesarias
   ],
   theme: {
     extend: {
