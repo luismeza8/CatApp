@@ -1,6 +1,6 @@
 function Body({ children }) {
   return (
-    <div className="flex-1 rounded-xl bg-gray-400 overflow-y-auto p-4">
+    <div className="mt-6 mr-6 rounded-t-2xl bg-gray-400 overflow-y-auto">
       {children}
     </div>
   );

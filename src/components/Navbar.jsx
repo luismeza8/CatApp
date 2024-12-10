@@ -1,7 +1,7 @@
 function Navbar() {
   return (
     <>
-      <div className="navbar bg-gray-400 box-border">
+      <div className="rounded-l-2xl navbar bg-gray-400 box-border">
         <div className="flex-1">
           <a className="btn btn-ghost text-xl">CatApp</a>
         </div>
