@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function Sidebar() {
   const [breeds, setBreeds] = useState([])
@@ -39,7 +40,7 @@ function Sidebar() {
         <div className='p-4'>
           <h1 className='mb-4 text-xl font-bold'>Razas</h1>
           {breeds.map((breed) => {
-            return <li className='text-[#11111b]' key={breed.name}><a>{breed.name}</a></li>
+            return <li className='text-[#11111b]' key={breed.name}><Link to='/yeap'>{breed.name}</Link></li>
           })}
         </div>
       </ul>
