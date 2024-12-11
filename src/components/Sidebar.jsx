@@ -34,11 +34,12 @@ function Sidebar() {
 
   return(
     <>
-      <ul className="h-full menu bg-gray-400 rounded-r-3xl drop-shadow-xl w-56 overflow-y-auto">
+      <div className='absolute bg-[#f5c2e7] w-56 h-[82%] bottom-4 left-4 rounded-3xl'></div>
+      <ul className="h-full menu bg-[#cba6f7] rounded-r-3xl drop-shadow-xl w-56 overflow-y-auto">
         <div className='p-4'>
           <h1 className='mb-4 text-xl font-bold'>Razas</h1>
           {breeds.map((breed) => {
-            return <li key={breed.name}><a>{breed.name}</a></li>
+            return <li className='text-[#11111b]' key={breed.name}><a>{breed.name}</a></li>
           })}
         </div>
       </ul>

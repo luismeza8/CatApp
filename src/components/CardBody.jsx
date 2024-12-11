@@ -25,7 +25,9 @@ export default function CardBody({ id }) {
 
   return (
     <>
-      <h3>{gato.breeds[0].name}</h3>
+      <h3 className='text-center mt-2 font-bold font-[#181825]'>
+        {gato.breeds[0].name}
+      </h3>
     </>
   )
 }

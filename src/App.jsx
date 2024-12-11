@@ -30,9 +30,10 @@ function App() {
   }, []);
 
   return (
-    <div className="h-screen flex flex-col">
+    <div className="h-screen flex flex-col bg-[#1e1e2e]">
       <div className='h-[10%] pl-5 pt-5'>
-        <Navbar />
+        <div className='absolute bg-[#89b4fa] h-[5%] w-[calc(100%-2.5rem)] top-12 left-10 rounded-l-3xl'></div>
+        <Navbar className='absolute' />
       </div>
 
       <div className="flex h-[90%]">
@@ -41,7 +42,7 @@ function App() {
         </div>
         <div className='flex pt-4 pr-8'>
           <Body>
-            <div className='p-2 flex flex-wrap justify-evenly'>
+            <div className='flex flex-wrap justify-evenly items-center'>
               {data.map((cat, index) => (
                 <Card className='max-w-[300px] h-auto w-auto rounded-3xl m-4' key={index} img={cat.url} alt="cat">
                   <CardBody id={cat.id}>
