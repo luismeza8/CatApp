@@ -15,13 +15,12 @@ export default function CardBody({ id }) {
         }
 
         const json = await response.json()
-        console.log(json.breeds[0].name)
         gatoSet(json)
       } catch(e) {
         console.error('errorrrs', e.message)
       }
     })();
-  }, [])
+  }, []);
 
 
   return (

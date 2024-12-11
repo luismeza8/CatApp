@@ -5,14 +5,17 @@ import Card from './components/Card';
 import CardBody from './components/CardBody'
 import { useEffect, useState } from 'react';
 
+
 function App() {
   const [data, dataSet] = useState([]);
 
   useEffect(() => {
     (async () => {
-      const url = "https://api.thecatapi.com/v1/images/search?has_breeds=true&limit=10";
+      const url = "https://api.thecatapi.com/v1/images/search?has_breeds=true&limit=28";
       try {
-        const response = await fetch(url);
+        const response = await fetch(url, {headers: {
+          'x-api-key': import.meta.env.VITE_API_KEY
+        }});
 
         if (!response.ok) {
           throw new Error(`Response status: ${response.status}`);
@@ -28,24 +31,26 @@ function App() {
 
   return (
     <div className="h-screen flex flex-col">
-      <div className='pl-5 pt-5'>
+      <div className='h-[10%] pl-5 pt-5'>
         <Navbar />
       </div>
 
-      <div className="flex flex-1 overflow-hidden">
-        <div className='h-3/4 pr-6 pt-6 pb-6'>
+      <div className="flex h-[90%]">
+        <div className='pr-8 py-8'>
           <Sidebar />
         </div>
+        <div className='flex pt-4 pr-8'>
           <Body>
-            <div className='p-4 flex flex-wrap justify-evenly'>
+            <div className='p-2 flex flex-wrap justify-evenly'>
               {data.map((cat, index) => (
-                <Card className='max-w-[300px] h-auto w-auto rounded-2xl m-4' key={index} img={cat.url} alt="cat">
+                <Card className='max-w-[300px] h-auto w-auto rounded-3xl m-4' key={index} img={cat.url} alt="cat">
                   <CardBody id={cat.id}>
                   </CardBody>
                 </Card>
               ))}
             </div>
           </Body>
+        </div>
       </div>
     </div>
   );
