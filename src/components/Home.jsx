@@ -7,7 +7,7 @@ export default function Home() {
 
   useEffect(() => {
     (async () => {
-      const url = "https://api.thecatapi.com/v1/images/search?has_breeds=true&limit=8";
+      const url = "https://api.thecatapi.com/v1/images/search?has_breeds=true&limit=12";
       try {
         const response = await fetch(url, {headers: {
           'x-api-key': import.meta.env.VITE_API_KEY
@@ -27,7 +27,7 @@ export default function Home() {
 
   return(
     <>
-      {data.map((cat, index) => (
+      {!data.length ? <h1 className='text-3xl font-extrabold m-8 text-[#1e1e2e]'>Loading...</h1> : data.map((cat, index) => (
         <Card className='max-w-[300px] h-auto w-auto rounded-3xl m-4' key={index} img={cat.url} alt="cat">
           <CardBody id={cat.id}>
           </CardBody>

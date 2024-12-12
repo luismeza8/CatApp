@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
 
 export default function CardBody({ id }) {
   const [gato, gatoSet] = useState({'id': '0', 'breeds': [{'name': ''}]})
@@ -23,10 +24,10 @@ export default function CardBody({ id }) {
   }, []);
 
 
-  return (
+  return !gato.breeds[0].name ? 'Loading...' : (
     <>
       <h3 className='text-center mt-2 font-bold font-[#181825]'>
-        {gato.breeds[0].name}
+        <Link className='text-[#1e1e2e] hover:underline' to={`/search/${gato.breeds[0].id}`}>{gato.breeds[0].name}</Link>
       </h3>
     </>
   )

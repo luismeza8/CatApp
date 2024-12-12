@@ -29,14 +29,14 @@ function Sidebar() {
 
   return(
     <>
-      <div className='absolute bg-[#f5c2e7] w-56 h-[82%] bottom-4 left-4 rounded-3xl'></div>
+      <div className='absolute bg-[#f5c2e7] w-60 h-[82%] bottom-4 rounded-r-3xl'></div>
       <ul className="h-full menu bg-[#cba6f7] rounded-r-3xl drop-shadow-xl w-56 overflow-y-auto">
         <div className='p-4'>
           <h1 className='mb-4 text-xl font-bold'>Razas</h1>
           {breeds.map((breed) => {
             return (
             <li className='text-[#11111b]' key={breed.name}>
-              <Link to={`/yeap/${breed.id}`}>
+              <Link to={`/search/${breed.id}`}>
                 {breed.name}
               </Link>
             </li>

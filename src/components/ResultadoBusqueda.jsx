@@ -39,12 +39,12 @@ export default function ResultadoBusqueda() {
 
   useEffect(() => {fetchData();}, [id])
 
-  const contenido = data.length ? <h1>{data[0].breeds[0].name}</h1> : 'cargando...'
+  const contenido = data.length ? <h1>{data[0].breeds[0].name}</h1> : 'Loading...'
 
   return (
     <>
       <div className='flex flex-col'>
-        <h1 className='text-3xl text-center m-8 font-extrabold'>{ contenido }</h1>
+        <h1 className='text-3xl text-center m-8 font-extrabold text-[#1e1e2e]'>{ contenido }</h1>
         <div className='flex flex-wrap justify-center'>
           {data.map((raza, index) => (
             <Card className='max-w-[300px] h-auto w-auto rounded-3xl m-4' key={index} img={raza.url} alt="cat">

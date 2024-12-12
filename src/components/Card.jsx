@@ -6,7 +6,7 @@ function Card({ children, img }) {
           <img
             className='max-h-[200px] rounded-xl'
             src={img}
-            alt="Shoes" />
+            alt="Cat" />
         </figure>
         { children }
       </div>
