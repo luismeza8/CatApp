@@ -22,7 +22,7 @@ function App() {
               <div className='flex flex-wrap justify-evenly items-center'>
                 <Routes>
                   <Route path='/' element={<Home />}/>
-                  <Route path='/yeap' element={<ResultadoBusqueda />}/>
+                  <Route path='/yeap/:id' element={<ResultadoBusqueda />}/>
                 </Routes>
               </div>
             </Body>

@@ -7,7 +7,7 @@ export default function Home() {
 
   useEffect(() => {
     (async () => {
-      const url = "https://api.thecatapi.com/v1/images/search?has_breeds=true&limit=116";
+      const url = "https://api.thecatapi.com/v1/images/search?has_breeds=true&limit=8";
       try {
         const response = await fetch(url, {headers: {
           'x-api-key': import.meta.env.VITE_API_KEY

@@ -19,17 +19,11 @@ function Sidebar() {
           throw new Error('respuesta de error en la consulta del sidebar ' + response.status)
         }
 
-        console.log(response.status)
-
         const json = await response.json()
         setBreeds(json)
-        console.log(breeds)
-
       } catch(e) {
         console.error('Error en la consulta del sidebar', e.message)
       }
-
-
     })();
   }, []);
 
@@ -40,7 +34,13 @@ function Sidebar() {
         <div className='p-4'>
           <h1 className='mb-4 text-xl font-bold'>Razas</h1>
           {breeds.map((breed) => {
-            return <li className='text-[#11111b]' key={breed.name}><Link to='/yeap'>{breed.name}</Link></li>
+            return (
+            <li className='text-[#11111b]' key={breed.name}>
+              <Link to={`/yeap/${breed.id}`}>
+                {breed.name}
+              </Link>
+            </li>
+            ) 
           })}
         </div>
       </ul>
